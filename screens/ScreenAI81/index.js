@@ -1,3 +1,4 @@
+import { Pressable } from "react-native";
 import React, { useState } from 'react';
 import { View, Text, TextInput, Image, TouchableOpacity, ScrollView, StyleSheet, Button, DatePickerAndroid, Platform, DatePickerIOS } from 'react-native';
 
@@ -33,9 +34,9 @@ const UserProfileScreen = () => {
   };
 
   return <ScrollView style={styles.container}>
-      <Image style={styles.userImage} source={{
-      uri: 'https://tinyurl.com/42evm3m3'
-    }} />
+      <Pressable><Image style={styles.userImage} source={{
+        uri: 'https://tinyurl.com/42evm3m3'
+      }} /></Pressable>
       <TextInput style={styles.input} value={name} onChangeText={setName} placeholder="Name" />
       <TextInput style={styles.input} value={address} onChangeText={setAddress} placeholder="Address" />
       <TextInput style={styles.textArea} value={bio} onChangeText={setBio} placeholder="Bio" multiline />
