@@ -1,17 +1,14 @@
-import { useNavigation } from "@react-navigation/native";
-import { Pressable } from "react-native";
 import React from 'react';
-import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, Image, StyleSheet, Pressable } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const App = () => {
   const navigation = useNavigation();
   return <View style={styles.container}>
       <View style={styles.header}>
-        <Pressable onPress={() => {
-        navigation.navigate("ScreenAI26");
-      }}><Image style={styles.icon} source={{
-          uri: 'https://tinyurl.com/42evm3m3'
-        }} /></Pressable>
+        <Image style={styles.icon} source={{
+        uri: 'https://tinyurl.com/42evm3m3'
+      }} />
         <Text style={styles.title}>My App</Text>
         <Image style={styles.icon} source={{
         uri: 'https://tinyurl.com/42evm3m3'
@@ -20,8 +17,10 @@ const App = () => {
       <View style={styles.buttonsContainer}>
         <TouchableOpacity style={styles.button}>
           <Pressable onPress={() => {
-          navigation.navigate("ScreenAI27");
-        }}><Text style={styles.buttonText}>Search</Text></Pressable>
+          navigation.navigate('ScreenAI27');
+        }}>
+            <Text style={styles.buttonText}>Search</Text>
+          </Pressable>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>Chat</Text>
@@ -31,6 +30,9 @@ const App = () => {
         </TouchableOpacity>
         <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>Photo Library</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>Friends</Text>
         </TouchableOpacity>
       </View>
       <View style={styles.footer}>
