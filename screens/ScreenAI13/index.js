@@ -10,9 +10,11 @@ const App = () => {
         uri: 'https://tinyurl.com/42evm3m3'
       }} />
         <Text style={styles.title}>My App</Text>
-        <Image style={styles.icon} source={{
-        uri: 'https://tinyurl.com/42evm3m3'
-      }} />
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI40");
+      }}><Image style={styles.icon} source={{
+          uri: 'https://tinyurl.com/42evm3m3'
+        }} /></Pressable>
       </View>
       <View style={styles.buttonsContainer}>
         <TouchableOpacity style={styles.button}>
