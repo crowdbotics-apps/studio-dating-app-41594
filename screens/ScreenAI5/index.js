@@ -34,7 +34,9 @@ const SignUpScreen = () => {
         </Text>
       </View>
       <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Sign Up</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI81");
+      }}><Text style={styles.buttonText}>Sign Up</Text></Pressable>
       </TouchableOpacity>
       <Text style={styles.socialText}>Or sign up with:</Text>
       <View style={styles.socialContainer}>
