@@ -23,7 +23,9 @@ const App = () => {
           </Pressable>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Chat</Text>
+          <Pressable onPress={() => {
+          navigation.navigate("ScreenAI33");
+        }}><Text style={styles.buttonText}>Chat</Text></Pressable>
         </TouchableOpacity>
         <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>Social Profile</Text>
