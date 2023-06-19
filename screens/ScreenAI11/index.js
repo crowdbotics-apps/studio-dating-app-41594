@@ -1,7 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, FlatList } from 'react-native';
 
 const GenderPreferenceScreen = () => {
+  const navigation = useNavigation();
   const [selectedGenders, setSelectedGenders] = useState([]);
   const genderData = [{
     id: '1',
@@ -40,7 +43,9 @@ const GenderPreferenceScreen = () => {
       <Text style={styles.title}>Select Gender Preferences</Text>
       <FlatList data={genderData} renderItem={renderItem} keyExtractor={item => item.id} numColumns={2} columnWrapperStyle={styles.checkboxWrapper} />
       <TouchableOpacity style={styles.nextButton} onPress={() => console.log('Next')}>
-        <Text style={styles.nextButtonText}>Next</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI12");
+      }}><Text style={styles.nextButtonText}>Next</Text></Pressable>
       </TouchableOpacity>
     </View>;
 };

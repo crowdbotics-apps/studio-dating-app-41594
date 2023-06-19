@@ -1,7 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
+import { Pressable } from "react-native";
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, FlatList } from 'react-native';
 
 const RelationshipScreen = () => {
+  const navigation = useNavigation();
   const [selectedRelationships, setSelectedRelationships] = useState([]);
   const relationships = [{
     id: '1',
@@ -35,7 +38,9 @@ const RelationshipScreen = () => {
       <Text style={styles.title}>Select Relationship Types</Text>
       <FlatList data={relationships} renderItem={renderItem} keyExtractor={item => item.id} extraData={selectedRelationships} />
       <TouchableOpacity style={styles.nextButton} onPress={() => console.log(selectedRelationships)}>
-        <Text style={styles.nextButtonText}>Next</Text>
+        <Pressable onPress={() => {
+        navigation.navigate("ScreenAI13");
+      }}><Text style={styles.nextButtonText}>Next</Text></Pressable>
       </TouchableOpacity>
     </View>;
 };
